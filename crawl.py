@@ -6,4 +6,4 @@ profiles = [
 
 if __name__=="__main__":
     for profile in profiles:
-        list_instagram_posts_by_username("profile")
+        list_instagram_posts_by_username(profile)
