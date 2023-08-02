@@ -5,11 +5,11 @@ from itertools import takewhile, dropwhile
 from datetime import datetime
 
 # TODO: bucket name 수정 필요
-bucket_name = "may-be-clean"
+bucket_name = "yourssu-community-instagram"
 
 def savePostsToS3(posts_json, bucket_name, object_key):
     # TODO: profile 적용 필요
-    session = boto3.Session(profile_name='hwangonjang')
+    session = boto3.Session()
     # Create an S3 client
     s3 = session.client('s3')
 
