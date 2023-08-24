@@ -6,6 +6,7 @@
 * required library
   * boto3
   * instaloader
+  * apscheduler
 
 ## 사용법
 ```bash

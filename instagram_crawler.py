@@ -4,11 +4,10 @@ import boto3
 from itertools import takewhile, dropwhile
 from datetime import datetime
 
-# TODO: bucket name 수정 필요
 bucket_name = "yourssu-community-instagram"
 
-def savePostsToS3(posts_json, bucket_name, object_key):
-    # TODO: profile 적용 필요
+def save_posts_to_s3(posts_json, bucket_name, object_key):
+    # TODO: profile 적용 필요x
     session = boto3.Session()
     # Create an S3 client
     s3 = session.client('s3')
@@ -21,7 +20,7 @@ def savePostsToS3(posts_json, bucket_name, object_key):
         ContentType='application/json'
     )
 
-def list_instagram_posts_by_username(username):
+def list_instagram_posts_by_username(username, url):
     # create an instance of Instaloader class
     loader = instaloader.Instaloader()
 
@@ -36,6 +35,7 @@ def list_instagram_posts_by_username(username):
         "external_url": profile.external_url,
         "followees": profile.followees,
         "followers": profile.followers,
+        "url": url,
     }
 
     # create a generator for posts of the user within the specified date range
@@ -96,9 +96,9 @@ def list_instagram_posts_by_username(username):
 
     # add s3 json object
     object_key = f"instagram/{username}/profile/profile.json"
-    savePostsToS3(profile_json, bucket_name, object_key)
+    save_posts_to_s3(profile_json, bucket_name, object_key)
 
     for i in range(len(posts_json), 0, -1):
         # print(posts_json[i])
         object_key = f"instagram/{username}/post/posts{i}.json"
-        savePostsToS3(posts_json[i-1], bucket_name, object_key)
+        save_posts_to_s3(posts_json[i - 1], bucket_name, object_key)
