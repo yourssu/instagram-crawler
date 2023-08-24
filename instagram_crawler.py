@@ -23,6 +23,10 @@ def save_posts_to_s3(posts_json, bucket_name, object_key):
 def list_instagram_posts_by_username(username, url):
     # create an instance of Instaloader class
     loader = instaloader.Instaloader()
+    # id = 'gon.urssu'
+    # pw = 'wkdghksrhs12.'
+    # loader.login(id, pw)
+    loader.load_session_from_file('gon.urssu')
 
     # get profile information of the user
     profile = instaloader.Profile.from_username(loader.context, username)
@@ -30,9 +34,9 @@ def list_instagram_posts_by_username(username, url):
     posts = profile.get_posts()
 
     profile_info = {
-        "userid": profile.userid,
+        "userId": profile.userid,
         "username": profile.username,
-        "external_url": profile.external_url,
+        "externalUrl": profile.external_url,
         "followees": profile.followees,
         "followers": profile.followers,
         "url": url,
@@ -43,7 +47,7 @@ def list_instagram_posts_by_username(username, url):
 
     # create a generator for posts of the user within the specified date range
     SINCE = datetime(2099, 12, 31)
-    UNTIL = current_date - timedelta(days=180)
+    UNTIL = datetime(2022, 12, 23) 
 
     # filtered_posts = [post for post in posts if post.mediaid > last_media_id]
 

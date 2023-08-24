@@ -4,6 +4,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 
 from datetime import datetime
+import time
 
 scheduler = BackgroundScheduler()
 
@@ -28,7 +29,6 @@ profiles = [
     ("사학과", "ssu_history", "https://www.instagram.com/ssu_history/"),
     ("예술창작학부 문예창작전공", "ssu_creativewriting", "https://www.instagram.com/ssu_creativewriting/"),
     ("예술창작학부 영화예술전공", "ssu_ssfilm", "https://www.instagram.com/ssu_ssfilm/"),
-    ("스포츠학부", "", ""),
     ("수학과", "ssu_math_", "https://www.instagram.com/ssu_math_/"),
     ("물리학과", "ssu_physics", "https://www.instagram.com/ssu_physics/"),
     ("화학과", "ssu.chem_resonance", "https://www.instagram.com/ssu.chem_resonance/"),
@@ -79,5 +79,8 @@ def crawl_job():
 
 
 if __name__ == "__main__":
-    scheduler.add_job(crawl_job, CronTrigger(minute="0"))
     scheduler.start()
+    scheduler.add_job(crawl_job, CronTrigger(minute=7))
+
+    while True:
+        time.sleep(60)
