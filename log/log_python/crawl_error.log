@@ -1,0 +1,75 @@
+Traceback (most recent call last):
+  File "/home/yourssu/instagram_crawler/./crawl.py", line 9, in <module>
+    list_instagram_posts_by_username(profile)
+  File "/home/yourssu/instagram_crawler/instagram_crawler.py", line 29, in list_instagram_posts_by_username
+    profile = instaloader.Profile.from_username(loader.context, username)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/instaloader/structures.py", line 737, in from_username
+    profile._obtain_metadata()  # to raise ProfileNotExistsException now in case username is invalid
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/instaloader/structures.py", line 806, in _obtain_metadata
+    metadata = self._context.get_iphone_json(f'api/v1/users/web_profile_info/?username={self.username}',
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/instaloader/instaloadercontext.py", line 580, in get_iphone_json
+    response = self.get_json(path, params, 'i.instagram.com', tempsession, response_headers=response_headers)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/instaloader/instaloadercontext.py", line 372, in get_json
+    resp = sess.get('https://{0}/{1}'.format(host, path), params=params, allow_redirects=False)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/urllib3/connectionpool.py", line 714, in urlopen
+    httplib_response = self._make_request(
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/urllib3/connectionpool.py", line 403, in _make_request
+    self._validate_conn(conn)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1053, in _validate_conn
+    conn.connect()
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/yourssu/instagram_crawler/./crawl.py", line 9, in <module>
+    list_instagram_posts_by_username(profile)
+  File "/home/yourssu/instagram_crawler/instagram_crawler.py", line 49, in list_instagram_posts_by_username
+    for post in takewhile(lambda p: p.date > UNTIL, dropwhile(lambda p: p.date > SINCE, posts)):
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/instaloader/nodeiterator.py", line 141, in __next__
+    query_response = self._query(self._data['page_info']['end_cursor'])
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/instaloader/nodeiterator.py", line 103, in _query
+    self._context.graphql_query(
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/instaloader/instaloadercontext.py", line 483, in graphql_query
+    resp_json = self.get_json('graphql/query',
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/instaloader/instaloadercontext.py", line 372, in get_json
+    resp = sess.get('https://{0}/{1}'.format(host, path), params=params, allow_redirects=False)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/urllib3/connectionpool.py", line 714, in urlopen
+    httplib_response = self._make_request(
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/site-packages/urllib3/connectionpool.py", line 461, in _make_request
+    httplib_response = conn.getresponse()
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/yourssu/miniconda3/envs/instagram_crawler/lib/python3.10/ssl.py", line 1130, in read
+    return self._sslobj.read(len, buffer)
+KeyboardInterrupt
