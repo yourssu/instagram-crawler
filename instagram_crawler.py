@@ -2,7 +2,7 @@ import instaloader
 import json
 import boto3
 from itertools import takewhile, dropwhile
-from datetime import datetime
+from datetime import datetime, timedelta
 
 bucket_name = "yourssu-community-instagram"
 
@@ -38,9 +38,12 @@ def list_instagram_posts_by_username(username, url):
         "url": url,
     }
 
+    # Get the current date
+    current_date = datetime.now()
+
     # create a generator for posts of the user within the specified date range
     SINCE = datetime(2099, 12, 31)
-    UNTIL = datetime(2022, 12, 23)
+    UNTIL = current_date - timedelta(days=180)
 
     # filtered_posts = [post for post in posts if post.mediaid > last_media_id]
 
