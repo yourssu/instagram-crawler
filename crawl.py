@@ -2,14 +2,16 @@ from instagram_crawler import list_instagram_posts_by_username
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
+import logging
 
 from datetime import datetime
 import time
 
 scheduler = BackgroundScheduler()
 
+student_council = ("총학생회", "plussu__63rd", "https://www.instagram.com/plussu__63rd")
+
 profiles = [
-    ("총학생회", "plussu__63rd", "https://www.instagram.com/plussu__63rd"),
     ("인문대학", "soongsil_humanities", "https://www.instagram.com/soongsil_humanities/"),
     ("자연과학대학", "natsci_ssu", "https://www.instagram.com/natsci_ssu/"),
     ("사회과학대학", "ssu_social", "https://www.instagram.com/ssu_social/"),
@@ -71,16 +73,39 @@ profiles = [
     ("숭실대학교 인권위원회", "ssu_huri", "https://www.instagram.com/ssu_huri/")
 ]
 
+logging.basicConfig(filename='crawl.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def crawl_job():
-    for profile in profiles:
-        print(f"{profile[0]} 크롤링 시작...{datetime.now()}")
-        list_instagram_posts_by_username(profile[1], profile[2])
+num_profiles = len(profiles)
+current_profile_index = 0
+current_profile = 0
 
+def crawl_profiles():
+    print('crawling...')
+    global current_profile_index
+    global current_profile
+
+    # Alternate between student_council and profiles every 4 cycles
+    if current_profile_index % 4 == 0:
+        logging.info(f"{student_council[0]} 크롤링 시작...{datetime.now()}")
+        logging.info(f'크롤링 한 피드 개수: {list_instagram_posts_by_username(student_council[1], student_council[2])}')
+    else:
+        # Choose the current profile using modulo operation
+        profile_index = current_profile_index % len(profiles)
+        profile = profiles[profile_index]
+        logging.info(f"{profile[0]} 크롤링 시작...{datetime.now()}")
+        logging.info(f'크롤링 한 피드 개수: {list_instagram_posts_by_username(profile[1], profile[2])}')
+        if current_profile >= num_profiles - 1:
+            logging.info('전체 수행 완료')
+            current_profile = 0
+        else:
+            current_profile += 1
+
+    current_profile_index += 1
+    logging.info(f'스크랩 개수: {current_profile_index}')
 
 if __name__ == "__main__":
     scheduler.start()
-    scheduler.add_job(crawl_job, CronTrigger(minute=7))
+    scheduler.add_job(crawl_profiles, CronTrigger(minute="0,30"))  # Run every 30 minutes
 
     while True:
         time.sleep(60)

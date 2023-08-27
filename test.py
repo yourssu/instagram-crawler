@@ -1,22 +1,90 @@
-from instagram_crawler import list_instagram_posts_by_username
-
-from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.triggers.cron import CronTrigger
-
-from datetime import datetime
-
-scheduler = BackgroundScheduler()
-
 profiles = [
+    ("인문대학", "soongsil_humanities", "https://www.instagram.com/soongsil_humanities/"),
+    ("자연과학대학", "natsci_ssu", "https://www.instagram.com/natsci_ssu/"),
+    ("사회과학대학", "ssu_social", "https://www.instagram.com/ssu_social/"),
+    ("법과대학", "ssu_college_of_law", "https://www.instagram.com/ssu_college_of_law/"),
+    ("경제통상대학", "ssu_53eg", "https://www.instagram.com/ssu_53eg/"),
+    ("경영대학", "ssu_attention", "https://www.instagram.com/ssu_attention/"),
+    ("공과대학", "ssu_engineering", "https://www.instagram.com/ssu_engineering/"),
+    ("IT대학", "it_soongsil", "https://www.instagram.com/it_soongsil/"),
+    ("기독교학과", "ssu_docs", "https://www.instagram.com/ssu_docs/"),
+    ("국어국문학과", "ssu_kr_atti_42", "https://www.instagram.com/ssu_kr_atti_42/"),
+    ("영어영문학과", "ssu_english", "https://www.instagram.com/ssu_english/"),
+    ("독어독문학과", "ssu_welle", "https://www.instagram.com/ssu_welle/"),
+    ("불어불문학과", "ssu_francais", "https://www.instagram.com/ssu_francais/"),
+    ("중어중문학과", "ssu_moonlight", "https://www.instagram.com/ssu_moonlight/"),
+    ("일어일문학과", "ssu_japanese", "https://www.instagram.com/ssu_japanese/"),
+    ("철학과", "ssu_philosophy_", "https://www.instagram.com/ssu_philosophy_/"),
+    ("사학과", "ssu_history", "https://www.instagram.com/ssu_history/"),
+    ("예술창작학부 문예창작전공", "ssu_creativewriting", "https://www.instagram.com/ssu_creativewriting/"),
+    ("예술창작학부 영화예술전공", "ssu_ssfilm", "https://www.instagram.com/ssu_ssfilm/"),
+    ("수학과", "ssu_math_", "https://www.instagram.com/ssu_math_/"),
+    ("물리학과", "ssu_physics", "https://www.instagram.com/ssu_physics/"),
+    ("화학과", "ssu.chem_resonance", "https://www.instagram.com/ssu.chem_resonance/"),
+    ("정보통계보험수리학과", "ssu_statistics", "https://www.instagram.com/ssu_statistics/"),
+    ("의생명시스템학부", "ssubio2001", "https://www.instagram.com/ssubio2001/"),
+    ("사회복지학부", "ssu_sowe", "https://www.instagram.com/ssu_sowe/"),
+    ("행정학부", "ssupa___", "https://www.instagram.com/ssupa___/"),
+    ("정치외교학과", "ssu_psir", "https://www.instagram.com/ssu_psir/"),
+    ("정보사회학과", "ssu_inso", "https://www.instagram.com/ssu_inso/"),
+    ("언론홍보학과", "ssu_unhong", "https://www.instagram.com/ssu_unhong/"),
+    ("평생교육학과", "ssu_lle25", "https://www.instagram.com/ssu_lle25/"),
+    ("법학과", "ssu_law_12th", "https://www.instagram.com/ssu_law_12th/"),
+    ("국제법무학과", "ssu_globallaw", "https://www.instagram.com/ssu_globallaw/"),
+    ("경제학과", "ssu_economics", "https://www.instagram.com/ssu_economics/"),
+    ("글로벌통상학과", "ssu_globalcommerce", "https://instagram.com/ssu_globalcommerce?igshid=MzRlODBiNWFlZA=="),
+    ("경영학부", "ssu_raon24", "https://instagram.com/ssu_raon24?igshid=MzRlODBiNWFlZA=="),
+    ("회계학과", "13th_reborn", "https://instagram.com/13th_reborn?igshid=MzRlODBiNWFlZA=="),
+    ("벤처중소기업학과", "ssu_vivid_26th", "https://instagram.com/ssu_vivid_26th?igshid=MzRlODBiNWFlZA=="),
+    ("금융학부", "14_finance_ato", "https://instagram.com/14_finance_ato?igshid=MzRlODBiNWFlZA=="),
+    ("화학공학과", "c.gnal_chemi", "https://instagram.com/c.gnal_chemi?igshid=MzRlODBiNWFlZA=="),
+    ("신소재공학과(구, 유기신소재파이버공학과)", "ssu_mse_official", "https://www.instagram.com/ssu_mse_official/"),
+    ("전기공학부", "with_on_35", "https://www.instagram.com/with_on_35/"),
+    ("기계공학부", "ssu_mecha_moment", "https://www.instagram.com/ssu_mecha_moment/"),
+    ("산업정보시스템공학과", "ssu_iise", "https://instagram.com/ssu_iise?igshid=MzRlODBiNWFlZA=="),
+    ("건축학부", "soongsil_archi", "https://instagram.com/soongsil_archi?igshid=MzRlODBiNWFlZA=="),
+    ("컴퓨터학부", "ssu_cse", "https://www.instagram.com/ssu_cse/"),
+    ("전자정보공학부", "ssu_electronic_engineering", "https://www.instagram.com/ssu_electronic_engineering/"),
+    ("글로벌미디어학부", "ssu_globalmedia", "https://www.instagram.com/ssu_globalmedia/"),
+    ("소프트웨어학부", "ssu_soft", "https://www.instagram.com/ssu_soft/"),
+    ("AI 융합학부(구, 스마트시스템SW학과)", "ssu_ai_conv", "https://www.instagram.com/ssu_ai_conv/"),
+    ("융합특성화자유전공학부", "ssu_convergence", "https://www.instagram.com/ssu_convergence/"),
+    ("숭실대학교 공식", "soongsil1897", "https://instagram.com/soongsil1897?igshid=MzRlODBiNWFlZA=="),
+    ("숭실대학교 홍보대사 미소", "ssu__miso", "https://instagram.com/ssu__miso?igshid=MzRlODBiNWFlZA=="),
+    ("숭실대학교 생협", "ssucoop", "https://instagram.com/ssucoop?igshid=MzRlODBiNWFlZA=="),
+    ("숭실대학교 동아리연합회", "ssudy_2023", "https://instagram.com/ssudy_2023?igshid=MzRlODBiNWFlZA=="),
+    ("숭실대학교 국제처", "soongsil_studyabroad", "https://instagram.com/soongsil_studyabroad?igshid=MzRlODBiNWFlZA=="),
+    ("숭실대학교 중앙감사위원회", "ssu_audit", "https://instagram.com/ssu_audit?igshid=MzRlODBiNWFlZA=="),
+    ("숭실대학교 방송국", "ssu_ssbs", "https://instagram.com/ssu_ssbs?igshid=MzRlODBiNWFlZA=="),
+    ("숭실대학교 인터넷방송국", "ssizen.net2000", "https://instagram.com/ssizen.net2000?igshid=MzRlODBiNWFlZA=="),
     ("숭실대학교 인권위원회", "ssu_huri", "https://www.instagram.com/ssu_huri/")
 ]
 
+import logging
 
-def crawl_job():
-    for profile in profiles:
-        print(f"{profile[0]} 크롤링 시작...{datetime.now()}")
-        list_instagram_posts_by_username(profile[1], profile[2])
+num_profiles = len(profiles)
+print(num_profiles)
+current_profile_index = 0
+current_profile = 0
 
+logging.basicConfig(filename='test.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-if __name__ == "__main__":
-    crawl_job()
+def crawl_profiles():
+    global current_profile_index
+    global current_profile
+
+    # Alternate between student_council and profiles every 4 cycles
+    if current_profile_index % 4 == 0:
+        logging.info('총학')
+    else:
+        logging.info(current_profile)
+        if current_profile >= num_profiles - 1:
+            logging.info(f'{current_profile}까지 수행 완료')
+            current_profile = 0
+        else:
+            current_profile += 1
+
+    current_profile_index += 1
+
+for i in range(48):
+    crawl_profiles()

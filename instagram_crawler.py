@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 
 bucket_name = "yourssu-community-instagram"
 
+
 def save_posts_to_s3(posts_json, bucket_name, object_key):
     # TODO: profile 적용 필요x
     session = boto3.Session()
@@ -20,13 +21,23 @@ def save_posts_to_s3(posts_json, bucket_name, object_key):
         ContentType='application/json'
     )
 
+
 def list_instagram_posts_by_username(username, url):
     # create an instance of Instaloader class
     loader = instaloader.Instaloader()
-    # id = 'gon.urssu'
-    # pw = 'wkdghksrhs12.'
-    # loader.login(id, pw)
-    loader.load_session_from_file('gon.urssu')
+
+    # try:
+        # print('세션')
+        # loader.load_session_from_file('gon.urssu')
+    # except:
+        # try:
+            # print('로그인')
+            # id = 'gon.urssu'
+            # pw = 'wkdghksrhs12.'
+            # loader.login(id, pw)
+        # except:
+            # print('비로그인')
+            # pass
 
     # get profile information of the user
     profile = instaloader.Profile.from_username(loader.context, username)
@@ -47,14 +58,14 @@ def list_instagram_posts_by_username(username, url):
 
     # create a generator for posts of the user within the specified date range
     SINCE = datetime(2099, 12, 31)
-    UNTIL = datetime(2022, 12, 23) 
+    UNTIL = datetime(2022, 12, 23)
 
     # filtered_posts = [post for post in posts if post.mediaid > last_media_id]
 
     instagram_posts = []
     # iterate over the filtered generator to get information for each post
     for post in takewhile(lambda p: p.date > UNTIL, dropwhile(lambda p: p.date > SINCE, posts)):
-    # for post in posts:
+        # for post in posts:
         # access attributes of the post object to get information
         post_id = post.mediaid
         caption = post.caption
@@ -98,14 +109,16 @@ def list_instagram_posts_by_username(username, url):
             posts.append(instagram_posts[i * 10:size])
 
     # convert the list to a JSON array
-    profile_json = json.dumps({"profile": profile_info}, ensure_ascii=False, indent=4)
-    posts_json = [json.dumps({"posts": post}, ensure_ascii=False, indent=4) for post in posts]
+    # profile_json = json.dumps({"profile": profile_info}, ensure_ascii=False, indent=4)
+    # posts_json = [json.dumps({"posts": post}, ensure_ascii=False, indent=4) for post in posts]
+
+    return len(posts)
 
     # add s3 json object
-    object_key = f"instagram/{username}/profile/profile.json"
-    save_posts_to_s3(profile_json, bucket_name, object_key)
+    # object_key = f"instagram/{username}/profile/profile.json"
+    # save_posts_to_s3(profile_json, bucket_name, object_key)
 
-    for i in range(len(posts_json), 0, -1):
+    # for i in range(len(posts_json), 0, -1):
         # print(posts_json[i])
-        object_key = f"instagram/{username}/post/posts{i}.json"
-        save_posts_to_s3(posts_json[i - 1], bucket_name, object_key)
+        # object_key = f"instagram/{username}/post/posts{i}.json"
+        # save_posts_to_s3(posts_json[i - 1], bucket_name, object_key)

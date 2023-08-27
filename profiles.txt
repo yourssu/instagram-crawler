@@ -1,8 +1,8 @@
-### 총학생회
+### 총학생회(약 1일) - 3시간
 (“총학생회“, “plussu__63rd”, “[https://www.instagram.com/plussu__63rd”](https://www.instagram.com/plussu__63rd%E2%80%9D))
 
 
-### 단과대학
+### 단과대학(약 7일)
 (”인문대학”,“soongsil_humanities”,”https://www.instagram.com/soongsil_humanities/”)
 (자연과학대학””, “natsci_ssu”, “https://www.instagram.com/natsci_ssu/”)
 (”사회과학대학”, “ssu_social”, “https://www.instagram.com/ssu_social/”)
@@ -12,6 +12,7 @@
 (”공과대학”, “ssu_engineering”, “https://www.instagram.com/ssu_engineering/”)
 (”IT대학”, “it_soongsil”, “https://www.instagram.com/it_soongsil/”)
 
+### 학과(약 7일 ~ 1달)
 ### 인문대학
 (”기독교학과”, “ssu_docs”, “https://www.instagram.com/ssu_docs/”)
 (”국어국문학과”, “ssu_kr_atti_42”, “https://www.instagram.com/ssu_kr_atti_42/”)
