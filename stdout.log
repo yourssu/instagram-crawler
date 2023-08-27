@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/Users/ggona/Documents/GitHub/Yourssu/instagram-crawler/crawl.py", line 1, in <module>
+    from instagram_crawler import list_instagram_posts_by_username
+  File "/Users/ggona/Documents/GitHub/Yourssu/instagram-crawler/instagram_crawler.py", line 1, in <module>
+    import instaloader
+ModuleNotFoundError: No module named 'instaloader'
+Traceback (most recent call last):
+  File "/Users/ggona/Documents/GitHub/Yourssu/instagram-crawler/crawl.py", line 1, in <module>
+    from instagram_crawler import list_instagram_posts_by_username
+  File "/Users/ggona/Documents/GitHub/Yourssu/instagram-crawler/instagram_crawler.py", line 1, in <module>
+    import instaloader
+ModuleNotFoundError: No module named 'instaloader'
+총학생회 크롤링 시작...2023-08-27 15:02:00.013546
+총학생회 크롤링 시작...2023-08-27 17:02:00.014577
+자연과학대학 크롤링 시작...2023-08-27 17:32:00.063849
+사회과학대학 크롤링 시작...2023-08-27 18:02:00.006652
+법과대학 크롤링 시작...2023-08-27 18:32:00.013605
+총학생회 크롤링 시작...2023-08-27 19:02:00.014305
+경영대학 크롤링 시작...2023-08-27 19:32:00.009794
+JSON Query to api/v1/users/web_profile_info/?username=ssu_attention: HTTPSConnectionPool(host='i.instagram.com', port=443): Max retries exceeded with url: /api/v1/users/web_profile_info/?username=ssu_attention (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x103a2d990>, 'Connection to i.instagram.com timed out. (connect timeout=300.0)')) [retrying; skip with ^C]
+공과대학 크롤링 시작...2023-08-27 20:02:00.017875
+IT대학 크롤링 시작...2023-08-27 20:32:00.079986
+총학생회 크롤링 시작...2023-08-27 21:02:00.013074
+국어국문학과 크롤링 시작...2023-08-27 22:02:00.016515
+영어영문학과 크롤링 시작...2023-08-27 22:32:00.020139
+독어독문학과 크롤링 시작...2023-08-27 23:02:00.200773
+총학생회 크롤링 시작...2023-08-27 23:32:00.017835
+중어중문학과 크롤링 시작...2023-08-28 00:02:00.021893
+일어일문학과 크롤링 시작...2023-08-28 00:32:00.012153
+철학과 크롤링 시작...2023-08-28 01:02:00.006788
+총학생회 크롤링 시작...2023-08-28 01:32:00.013511
+예술창작학부 문예창작전공 크롤링 시작...2023-08-28 02:02:00.008579
+예술창작학부 영화예술전공 크롤링 시작...2023-08-28 02:32:00.012852
+수학과 크롤링 시작...2023-08-28 03:02:00.006496
+총학생회 크롤링 시작...2023-08-28 03:32:00.079134
+화학과 크롤링 시작...2023-08-28 04:02:00.012186
+정보통계보험수리학과 크롤링 시작...2023-08-28 04:32:00.008740
+의생명시스템학부 크롤링 시작...2023-08-28 05:02:00.014858
+총학생회 크롤링 시작...2023-08-28 05:32:00.038004
+행정학부 크롤링 시작...2023-08-28 06:02:00.021930
+정치외교학과 크롤링 시작...2023-08-28 06:32:00.012957
+정보사회학과 크롤링 시작...2023-08-28 07:02:00.008986
+총학생회 크롤링 시작...2023-08-28 07:32:00.038555
+평생교육학과 크롤링 시작...2023-08-28 08:02:00.021814

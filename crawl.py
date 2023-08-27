@@ -80,19 +80,20 @@ current_profile_index = 0
 current_profile = 0
 
 def crawl_profiles():
-    print('crawling...')
     global current_profile_index
     global current_profile
 
     # Alternate between student_council and profiles every 4 cycles
     if current_profile_index % 4 == 0:
         logging.info(f"{student_council[0]} 크롤링 시작...{datetime.now()}")
+        print(f"{student_council[0]} 크롤링 시작...{datetime.now()}")
         logging.info(f'크롤링 한 피드 개수: {list_instagram_posts_by_username(student_council[1], student_council[2])}')
     else:
         # Choose the current profile using modulo operation
         profile_index = current_profile_index % len(profiles)
         profile = profiles[profile_index]
         logging.info(f"{profile[0]} 크롤링 시작...{datetime.now()}")
+        print(f"{profile[0]} 크롤링 시작...{datetime.now()}")
         logging.info(f'크롤링 한 피드 개수: {list_instagram_posts_by_username(profile[1], profile[2])}')
         if current_profile >= num_profiles - 1:
             logging.info('전체 수행 완료')
@@ -105,7 +106,7 @@ def crawl_profiles():
 
 if __name__ == "__main__":
     scheduler.start()
-    scheduler.add_job(crawl_profiles, CronTrigger(minute="0,30"))  # Run every 30 minutes
+    scheduler.add_job(crawl_profiles, CronTrigger(minute="2,32"))  # Run every 30 minutes
 
     while True:
         time.sleep(60)
