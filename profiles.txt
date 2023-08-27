@@ -1,4 +1,8 @@
+### 총학생회
 (“총학생회“, “plussu__63rd”, “[https://www.instagram.com/plussu__63rd”](https://www.instagram.com/plussu__63rd%E2%80%9D))
+
+
+### 단과대학
 (”인문대학”,“soongsil_humanities”,”https://www.instagram.com/soongsil_humanities/”)
 (자연과학대학””, “natsci_ssu”, “https://www.instagram.com/natsci_ssu/”)
 (”사회과학대학”, “ssu_social”, “https://www.instagram.com/ssu_social/”)
@@ -7,6 +11,8 @@
 (”경영대학”, “ssu_attention”, “https://www.instagram.com/ssu_attention/”)
 (”공과대학”, “ssu_engineering”, “https://www.instagram.com/ssu_engineering/”)
 (”IT대학”, “it_soongsil”, “https://www.instagram.com/it_soongsil/”)
+
+### 인문대학
 (”기독교학과”, “ssu_docs”, “https://www.instagram.com/ssu_docs/”)
 (”국어국문학과”, “ssu_kr_atti_42”, “https://www.instagram.com/ssu_kr_atti_42/”)
 (”영어영문학과”, “ssu_english”, “https://www.instagram.com/ssu_english/”)
@@ -18,32 +24,45 @@
 (”사학과”, “ssu_history”, “https://www.instagram.com/ssu_history/”)
 (”예술창작학부 문예창작전공”, “ssu_creativewriting”, “https://www.instagram.com/ssu_creativewriting/”)
 (”예술창작학부 영화예술전공”, “ssu_ssfilm”, “https://www.instagram.com/ssu_ssfilm/”)
-(”스포츠학부”, “”, “”)
+
+### 자연과학대학
 (”수학과”, “ssu_math_”, “https://www.instagram.com/ssu_math_/”)
 (”물리학과”, “ssu_physics”, “https://www.instagram.com/ssu_physics/”)
 (”화학과”, “ssu.chem_resonance”, “https://www.instagram.com/ssu.chem_resonance/”)
 (”정보통계보험수리학과”, “ssu_statistics”, “https://www.instagram.com/ssu_statistics/”)
 (”의생명시스템학부”, “ssubio2001”, “https://www.instagram.com/ssubio2001/”)
+
+### 사회과학대학
 (”사회복지학부”, “ssu_sowe”, “https://www.instagram.com/ssu_sowe/”)
 (”행정학부”, “ssupa___”, “https://www.instagram.com/ssupa___/”)
 (”정치외교학과”, “ssu_psir”, “https://www.instagram.com/ssu_psir/”)
 (”정보사회학과”, “ssu_inso”, “https://www.instagram.com/ssu_inso/”)
 (”언론홍보학과”, “ssu_unhong”, “https://www.instagram.com/ssu_unhong/”)
 (”평생교육학과”, “ssu_lle25”, “https://www.instagram.com/ssu_lle25/”)
+
+### 법과대학
 (”법학과”, “ssu_law_12th”, “https://www.instagram.com/ssu_law_12th/”)
 (”국제법무학과”, “ssu_globallaw”, “https://www.instagram.com/ssu_globallaw/”)
+
+### 경제통상대학
 (”경제학과”, “ssu_economics”, “https://www.instagram.com/ssu_economics/”)
 (”글로벌통상학과”, “ssu_globalcommerce”, “https://instagram.com/ssu_globalcommerce?igshid=MzRlODBiNWFlZA==”)
+
+### 경영대학
 (”경영학부”, “”ssu_raon24, “https://instagram.com/ssu_raon24?igshid=MzRlODBiNWFlZA==”)
 (”회계학과”, “13th_reborn”, “https://instagram.com/13th_reborn?igshid=MzRlODBiNWFlZA==”)
 (”벤처중소기업학과”, “ssu_vivid_26th”, “https://instagram.com/ssu_vivid_26th?igshid=MzRlODBiNWFlZA==”)
 (”금융학부”, “14_finance_ato”, “https://instagram.com/14_finance_ato?igshid=MzRlODBiNWFlZA==”)
+
+### 공과대학
 (”화학공학과”, “c.gnal_chemi”, “https://instagram.com/c.gnal_chemi?igshid=MzRlODBiNWFlZA==”)
 (”신소재공학과(구, 유기신소재파이버공학과)”, “ssu_mse_official”, “https://www.instagram.com/ssu_mse_official/”)
 (”전기공학부”, “with_on_35”, “https://www.instagram.com/with_on_35/”)
 (”기계공학부”, “ssu_mecha_moment”, “https://www.instagram.com/ssu_mecha_moment/”)
 (”산업정보시스템공학과”, “ssu_iise”, “https://instagram.com/ssu_iise?igshid=MzRlODBiNWFlZA==”)
 (”건축학부”, “soongsil_archi”, “https://instagram.com/soongsil_archi?igshid=MzRlODBiNWFlZA==”)
+
+### IT대학
 (”컴퓨터학부”, “ssu_cse”, “https://www.instagram.com/ssu_cse/”)
 (”전자정보공학부”, “ssu_electronic_engineering”, “https://www.instagram.com/ssu_electronic_engineering/”)
 (”글로벌미디어학부”, “ssu_globalmedia”, “https://www.instagram.com/ssu_globalmedia/”)
