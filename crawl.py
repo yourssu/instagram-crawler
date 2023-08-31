@@ -70,8 +70,8 @@ profiles = [
     ("숭실대학교 중앙감사위원회", "ssu_audit", "https://instagram.com/ssu_audit?igshid=MzRlODBiNWFlZA=="),
     ("숭실대학교 방송국", "ssu_ssbs", "https://instagram.com/ssu_ssbs?igshid=MzRlODBiNWFlZA=="),
     ("숭실대학교 인터넷방송국", "ssizen.net2000", "https://instagram.com/ssizen.net2000?igshid=MzRlODBiNWFlZA=="),
-    ("숭실대학교 인권위원회", "ssu_huri", "https://www.instagram.com/ssu_huri/")
-    ("유어슈", "yourssu_official", "https://www.instagram.com/yourssu_official/"),
+    ("숭실대학교 인권위원회", "ssu_huri", "https://www.instagram.com/ssu_huri/"),
+    ("유어슈", "yourssu_official", "https://www.instagram.com/yourssu_official/")
 ]
 
 logging.basicConfig(filename='crawl.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -108,6 +108,7 @@ def crawl_profiles():
 if __name__ == "__main__":
     scheduler.start()
     scheduler.add_job(crawl_profiles, CronTrigger(minute="0,30"))  # Run every 30 minutes
-
+    # print('크롤링 시작')
+    # print(list_instagram_posts_by_username('plussu__63rd', 'https://www.instagram.com/plussu__63rd'))
     while True:
         time.sleep(60)
